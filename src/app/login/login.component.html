@@ -1,0 +1,13 @@
+
+
+  <div [formGroup]="loginForm" style="background-color:palevioletred;padding :20px; border:2px solid black" >
+    <h1 > Login Page </h1>
+    <input type ="text" formControlName = 'email' placeholder="email">
+    <div *ngIf="loginForm.get('email').errors">
+      <span *ngIf ="loginForm.get('email').errors['minlength']">Minimum length is 5</span>
+    <span *ngIf ="loginForm.get('email').touched && loginForm.get('email').errors['required']">This field is required</span>
+    </div>
+    <input type ="password" formControlName = 'password' placeholder="password">
+    <button type="submit" style="background-color:skyblue;" routerLink="/dash">Login</button>
+  </div>
+
